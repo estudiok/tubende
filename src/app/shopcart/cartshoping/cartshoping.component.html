@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="grid mt-1">
+  <div class="col-12">
+    <button pButton label="Pagar" style="width: 100%"></button>
+  </div>
+
+  <div class="col-12 p-0">
+      <p-card>
+          <div class="grid">
+              <div class="col-12">
+                <p-checkbox name="groupname" value="val1" label="Todos" [(ngModel)]="selectedValues"></p-checkbox>
+                <!-- <p-checkbox name="groupname" value="val2" label="Value 2" [(ngModel)]="selectedValues"></p-checkbox> -->
+              </div>
+
+              <ng-container *ngIf="products">
+                <div class="col-12" *ngFor="let product of products; let i = index">
+                    <p-card>
+                        <div class="grid">
+                            <div class="col-12">
+                                <p-checkbox name="groupname" value="val{{i}}" [(ngModel)]="selectedValues"></p-checkbox>
+                            </div>
+
+                            <div class="col-5">
+                                <a href="#">
+                                    <p-image src="assets/{{product.image}}" alt="Image" width="130" height="130"></p-image>
+                                </a>
+                            </div>
+                            <div class="col-7">
+                                <div class="grid">
+                                    <div class="col-12">
+                                        <h3 class="mt-3 mb-1">{{product.title}}</h3>
+                                    </div>
+                                    <div class="col-12">
+                                        <span style="font-size: 23px;">Bs. {{product.price}}</span>
+                                    </div>
+            
+                                    <div class="col-12 pt-0">
+                                        <span style="font-size: 16px;">Envio Bs. {{product.shipping}}</span>
+                                    </div>
+                                    
+                                    <div class="col-4">
+                                        <button pButton type="button" icon="pi pi-trash" class="p-button-danger p-button-sm"></button>
+                                    </div>
+                                    <div class="col-8">
+                                        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Qnty"></p-dropdown>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </p-card>
+                </div>
+            </ng-container>
+
+              
+
+          </div>
+      </p-card>
+  </div>
+</div>

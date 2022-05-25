@@ -1,0 +1,30 @@
+
+###
+GET http://localhost:4000/api/products
+
+###
+GET http://localhost:4000/api/products/628e3b8bfc1048400b827ec6
+
+###
+POST http://localhost:4000/api/products
+Content-Type: application/json
+
+{
+    "title": "Laptop Toshiba Neon t9000",
+    "price": "3000",
+    "discount": "3999",
+    "image": "laptop2.png",
+    "category": "laptop"
+
+}
+
+###
+PUT http://localhost:4000/api/products/628e46b3fa6ba6942902d454
+Content-Type: application/json
+
+{
+    "shipping": "250"
+}
+
+###
+DELETE http://localhost:4000/api/products/628e5f929b12a4e94f79d8d4

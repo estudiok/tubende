@@ -1,0 +1,123 @@
+<app-navbar></app-navbar>
+
+<ng-container *ngIf="(product$ | async) as product">
+    <div class="grid mt-1">
+        <div class="col-12">
+            <p-card>
+                <div class="grid">
+                    <div class="col-12 text-center">
+                        <h3>{{product.title}}</h3>
+                    </div>
+                    
+                    <div class="col-12 text-center">
+                        <p-image src="assets/{{product.image}}" alt="Image" width="200" height="200"></p-image>
+                    </div>
+    
+                    <div class="col-12 text-center">
+                        <h4>Detalles</h4>
+                    </div>
+    
+    
+                    <div class="col-12 pr-3 pl-3">
+                        <div class="grid">
+                         
+                             <div class="col-4">
+                                 <span>Marca:</span>
+                                 
+                             </div>
+                             <div class="col-7">
+                                 <span>{{product.brand}}</span>
+                             </div>
+                             <!-- Line -->
+                             <div class="col-12 pt-0 pb-0"><hr class="mt-0"></div>
+                             <!-- End line -->
+                             
+                             <div class="col-4">
+                                 <span>Modelo:</span>
+                             </div>
+                             <div class="col-7">
+                                 <span>{{product.model}}</span>
+                             </div>
+                             <!-- Line -->
+                             <div class="col-12 pt-0 pb-0"><hr class="mt-0"></div>
+                             <!-- End line -->
+                             
+                             <div class="col-4">
+                                 <span>Color:</span>
+                             </div>
+                             <div class="col-7">
+                                 <span>{{product.colour}}</span>
+                             </div>
+                             <!-- Line -->
+                             <div class="col-12 pt-0 pb-0"><hr class="mt-0"></div>
+                             <!-- End line -->
+                             
+                             <div class="col-4">
+                                <span>S.O.:</span>
+                            </div>
+                            <div class="col-7">
+                                <span>{{product.so}}</span>
+                            </div>
+                            <!-- Line -->
+                            <div class="col-12 pt-0 pb-0"><hr class="mt-0"></div>
+                            <!-- End line -->
+                            
+                            <div class="col-4">
+                                <span>RAM:</span>
+                            </div>
+                            <div class="col-7">
+                                <span>{{product.ram}}</span>
+                            </div>
+                            <!-- Line -->
+                            <div class="col-12 pt-0 pb-0"><hr class="mt-0"></div>
+                            <!-- End line -->
+    
+                            <div class="col-4">
+                                <span>Storage:</span>
+                            </div>
+                            <div class="col-7">
+                                <span>{{product.storage}}</span>
+                            </div>
+                            <!-- Line -->
+                            <div class="col-12 pt-0 pb-0"><hr class="mt-0"></div>
+                            <!-- End line -->
+                        </div>
+    
+                    </div>
+                    
+                    <div class="col-12 ">
+                        <div class="grid">
+    
+                            <div class="col-12 pr-3">
+                                <h4 style="display: inline;" class="mr-1">Precio:</h4>
+                                <h3 style="display: inline; color: rgb(55, 123, 224);">{{product.price }} Bs</h3>
+                            </div>
+    
+                            <div class="col-12 pr-3">
+                                <h4 style="display: inline;" class="mr-1">Envio:</h4>
+                                <h3 style="display: inline; color: rgb(55, 123, 224);">{{product.shipping}} Bs</h3>
+                            </div>
+    
+                            <div class="col-12 pr-3">
+                                <a (click)="saveCart(product)">
+                                    <button pButton type="button" label="Agregar al carrito" style="width: 100%;" ></button>
+                                </a>
+                            </div>
+    
+                            <div class="col-12 pr-3 pt-0">
+                                <a routerLink="/access">
+                                    <button pButton type="button" label="Comprar" style="width: 100%;" ></button>
+                                </a>
+                            </div>
+    
+    
+     
+                        </div>
+                    </div>
+    
+                </div>
+            </p-card>
+        </div>
+    </div>
+</ng-container>
+
